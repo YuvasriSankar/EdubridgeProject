@@ -14,25 +14,27 @@ public class SevenDay {
 			System.out.println("4: Friday");
 			System.out.println("5: Saturday and Sunday");
 			System.out.println("Enter the Day:");
-			int option=scanner.nextInt();
+			String option=scanner.next();
 			switch(option)
 			{
-			case 1:
+			case "Monday":
 			
 				System.out.println("First day of the week");
 				break;
-			    case 2:
+			    case "Tuesday":
 				System.out.println("Second day of the week");
 				break;
-				case 3:
+				case "Wednesday":
+				case "Thursday":
 				System.out.println("Mid day of the week");
 				break;
 			
-				case 4:
+				case "Friday":
 				System.out.println("last working day of week");
 				break;
 			
-				case 5:
+				case "Saturday":
+				case "Sunday":
 				System.out.println(" week end");
 				break;
 				default:
