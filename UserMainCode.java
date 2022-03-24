@@ -1,13 +1,19 @@
-package Stringprocessinglongshortlong;
+package fetching_middle_character_from_string;
 
 public class UserMainCode {
 
-	public static String getCombo(String s1, String s2) {
-		
+	public static String getMiddleChars(String s) {
 		// TODO Auto-generated method stub
-		if(s1.length()>s2.length())
-			return s1+s2+s1;
-		return s2+s1+s2;
+		StringBuffer sb= new StringBuffer();
+		String s2=null;
+		if(s.length()%2==0) { // Constriant length
+		sb.append(s.substring(s.length()/2-1,s.length()/2+1));
+		// Stringlength=6;starting length=6/2-1,endinglength=6/2+1;(3-1,3+1);(2,4) 
+		}
+		 s2=sb.toString();// string coverted to  toString
+		return s2;
+	}
+		
 	}
 
-}
+
