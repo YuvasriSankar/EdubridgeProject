@@ -1,18 +1,18 @@
-package flushcharacters;
+package name_shrinking;
 
 import java.util.Scanner;
 
 public class Main {
-//Flush Character program
+
 	public static void main(String[] args) {
-		try (// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in)) {
-			System.out.println("Enter the String: ");
-				String s1=sc.nextLine();
-				String s2= UserMainCode.getSpecialChar(s1);// function call
-				System.out.println(s2);
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a Full Name:");
+			String s1=sc.nextLine();
+               System.out.println("Shrink Name: "+ UserMainCode.getFormatedString(s1));
+               sc.close();
 		}
-		}
+		
 
 	}
 

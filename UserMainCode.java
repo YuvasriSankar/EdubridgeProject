@@ -1,16 +1,20 @@
-package flushcharacters;
+package name_shrinking;
+
+import java.util.StringTokenizer;
 
 public class UserMainCode {
-
-	public static String getSpecialChar(String s1) {
-		// TODO Auto-generated method stub
+	public static String getFormatedString(String s1) {
 		StringBuffer sb= new StringBuffer();
-		for(int i=0;i<s1.length();i++) {
-			char a =s1.charAt(i);
-			if(!Character.isAlphabetic(a))
-				sb.append(a);
-	}
+		StringTokenizer st =new StringTokenizer(s1," ");
+		String s2=st.nextToken();
+		String s3=st.nextToken();
+		String s4=st.nextToken();
+		sb.append(s4).append(" ");
+		sb.append(s3.substring(0,1));
+		sb.append(".");
+		sb.append(s2.substring(0,1));
 		return sb.toString();
+		
+		
 	}
-
 }
