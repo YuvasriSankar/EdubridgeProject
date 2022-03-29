@@ -1,32 +1,22 @@
-import java.util.Scanner;
+package studentemployeedetail;
 
-public class Student {
-
-	public static void main(String[] args) {
-		try (// TODO Auto-generated method stub
-		Scanner scanner = new Scanner(System.in)) {
-			System.out.println("Enter StudentMark:");
-			int StudentMark=scanner.nextInt();
-			if(StudentMark>=90 && StudentMark<=100) {
-				System.out.println("Excellent");
-			}else if(StudentMark>=80 && StudentMark<=90 ) {
-				System.out.println("Good");
-}else if(StudentMark>=60 && StudentMark<=80 ) {
-			System.out.println("passed");
-			
-}else if(StudentMark<60 ) {
-			System.out.println("Failed");
-}else
-				System.out.println("No Grade");
-		}
-			
+public class Student extends Person {
 	
-			
-			
-			
-		}
-			
+	String courseenrolled;
+	int studentid;
+	
+	public Student(String firstname, String lastname, int age, String courseenrolled, int studentid) {
+		super(firstname, lastname, age);
+		this. courseenrolled = courseenrolled;
+		this. studentid = studentid;
+	}
+	//@override
+	public void display()
+	{
+		super.display();// call the baseclass overriden method 
+		System.out.println("Courseenrolled=" + courseenrolled + ", Studentid= " + studentid );
+	
 
 	}
-
-
+	
+}
