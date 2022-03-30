@@ -1,22 +1,20 @@
-package studentemployeedetail;
 
-public class Student extends Person {
-	
-	String courseenrolled;
-	int studentid;
-	
-	public Student(String firstname, String lastname, int age, String courseenrolled, int studentid) {
-		super(firstname, lastname, age);
-		this. courseenrolled = courseenrolled;
-		this. studentid = studentid;
+public class Student {
+	private String name;
+	private int age;
+	private int sem;
+	private float marks;
+	Project project;
+	public Student(String name, int age, int sem, float marks, Project project) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.sem = sem;
+		this.marks = marks;
+		this.project = project;
 	}
-	//@override
-	public void display()
-	{
-		super.display();// call the baseclass overriden method 
-		System.out.println("Courseenrolled=" + courseenrolled + ", Studentid= " + studentid );
-	
-
+	@Override
+	public String toString() {
+		return "Student [name=" + name + ", age=" + age + ", sem=" + sem + ", marks=" + marks + " , project="+ project +"]";
 	}
-	
 }
