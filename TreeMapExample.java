@@ -1,50 +1,21 @@
-import java.util.Map;
-import java.util.TreeMap;
 
+	import java.util.Map;
+     import java.util.TreeMap;
 
-	class Employee1
-	{
-		int empid;
-		String empName;
-		
-		public Employee1(int empid, String empName) {
-			super();
-			this.empid = empid;
-			this.empName = empName;
-		}
-		
-		
-		
-	}
-	public class TreeMapExample {
-
-			static TreeMap<Integer,String> treeMap;
-			
-			static {
-				treeMap=new TreeMap();
-			}
-			
-		static void addEmployee(Employee1 employee)
-		{
-			treeMap.put(employee.empid, employee.empName);
-		}
-		static TreeMap getEmployeeList()
-		{
-			return treeMap;
-		}
-		
+       public class TreeMapExample {
 		public static void main(String[] args) {
 			// TODO Auto-generated method stub
-			//TreeMapExample treeMapExample=new TreeMapExample();
-			addEmployee(new Employee1(1, "Manisha"));
-			addEmployee(new Employee1(2, "girish"));
-			addEmployee(new Employee1(3, "komal"));
-			addEmployee(new Employee1(4, "ram"));
+			TreeMap <Integer, String> map=new TreeMap<>();
+			map.put(1, "Manisha");
+			map.put(2, "girish");
+			map.put(3, "komal");
+			map.put(4, "ram");
+			map.put(5, "krishna");
+			map.put(6,"null");
 			
-			TreeMap<Integer,String> treeMap=getEmployeeList();
-
+		System.out.println(map);
 		
-		for(Map.Entry<Integer,String> val : treeMap.entrySet())
+		for(Map.Entry<Integer,String> val : map.entrySet())
 		{
 			String value=val.getValue();
 			if(value.startsWith("k"))
@@ -54,6 +25,8 @@ import java.util.TreeMap;
 		}
 
 	}
-
+	
+	
+	
 
 
