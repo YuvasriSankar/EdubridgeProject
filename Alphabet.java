@@ -1,39 +1,46 @@
-package vowelandconsonant;
 
-import java.util.Scanner;
 
-public class Alphabet {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int i=0;
-		Scanner sc= new Scanner(System.in);
-		System.out.println("Enter  a Character: ");
-		char ch= sc.next().charAt(0);
-		switch(ch)
+ class Alphabet {
+	 
+	public int uniqueVowels(String str)
+	{
+		for(int i=0;i<str.length();i++)
 		{
-		case'a':
-		case'e':
-		case'i':
-		case'o':
-		case'u':
-		case'A':
-		case'E':
-		case'I':
-		case'O':
-		case'U':
+			char ch=str.charAt(i);
+			if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||ch==' ')
+			{	
+				i++;
+		}
+		}
+	return 1;
+}
+public int uniqueConsonants(String str)
+{
+	for(int i=0;i<str.length();i++)
+	{
+		char ch=str.charAt(i);
+		if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')
+		{
+			 System.out.println(" ");
+		}else if(ch!=' ') {
+			
 			i++;
-		}
-		if(i==1)
-			System.out.println("Entered character "+ch+" is Vowel");	
-		else
-			if((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z'))
-				System.out.println("Entered character"+ch+" is Consonant");	
-			else
-				System.out.println("Not an alphabet");
-		}
-
-
 	}
+}
+	return 2;
+}
 
+	public static void main(String[] args)throws Exception {
+		// TODO Auto-generated method stub
+		 Alphabet obj = new Alphabet();
+		 int UniqueVowels= obj.uniqueVowels("abacab");
+		 int UniqueConsonants= obj.uniqueConsonants("abacab");
+		 System.out.println("UniqueVowels:"+ obj.uniqueVowels("abacab"));
+		 System.out.println("UniqueConsonants:"+obj.uniqueConsonants("abacab"));
+
+
+ }
+ }
+ 
 
