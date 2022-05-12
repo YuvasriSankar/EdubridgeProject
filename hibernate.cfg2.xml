@@ -16,7 +16,7 @@
         <property name="connection.password">Yuvasri@31</property>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
     
-    	<mapping class="com.Employee"/>
+    	<mapping class="usingforloop.Employee1"/>
     </session-factory>
 
 </hibernate-configuration>
