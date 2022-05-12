@@ -1,78 +1,74 @@
-package model;
+package com.edubridge.hibernate.valuetype;
 
-public class UserDetails {
-	
-//data members
-String username;
-String password;
-String mobileno;
+import java.util.Date;
 
-String firstName;
-String lastName;
-String location;
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-//default constructor
+@Entity
+@Table (name="USER_TABLE")
+public class UserDetails
+{
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name="USER_ID")
+    private int    userId;
+   
+    @Column(name="USER_NAME")
+    private String userName;
+   
+    @Embedded //For value type object
+    private Address address;
+   
+    @Column(name="USER_PHONE")
+    private String phone;
+   
+    @Column(name="DOB")
+    private Date dob;
 
-public String getFirstName() {
-	return firstName;
-}
+	public int getUserId() {
+		return userId;
+	}
 
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
 
-@Override
-public String toString() {
-	return "UserDetails [username=" + username + ", password=" + password + ", mobileno=" + mobileno + ", firstName="
-			+ firstName + ", lastName=" + lastName + ", location=" + location + "]";
-}
+	public String getUserName() {
+		return userName;
+	}
 
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 
-public void setFirstName(String firstName) {
-	this.firstName = firstName;
-}
+	public Address getAddress() {
+		return address;
+	}
 
+	public void setAddress(Address address) {
+		this.address = address;
+	}
 
-public String getLastName() {
-	return lastName;
-}
+	public String getPhone() {
+		return phone;
+	}
 
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 
-public void setLastName(String lastName) {
-	this.lastName = lastName;
-}
+	public Date getDob() {
+		return dob;
+	}
 
-
-public String getLocation() {
-	return location;
-}
-
-
-public void setLocation(String location) {
-	this.location = location;
-}
-
-
-public UserDetails() {
-	super();
-}
-
-
-//getters and setters
-public String getUsername() {
-	return username;
-}
-public void setUsername(String username) {
-	this.username = username;
-}
-public String getPassword() {
-	return password;
-}
-public void setPassword(String password) {
-	this.password = password;
-}
-public String getMobileno() {
-	return mobileno;
-}
-public void setMobileno(String mobileno) {
-	this.mobileno = mobileno;
-}
-
+	public void setDob(Date dob) {
+		this.dob = dob;
+	}
+   
 }
