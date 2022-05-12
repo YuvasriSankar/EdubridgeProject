@@ -1,15 +1,14 @@
-package com.edubridge.hibernate.model;
-
+package com;
 import javax.persistence.Column;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Table;
+//import javax.persistence.Table;
 import javax.persistence.Transient;
 
 @Entity
-@Table(name= "emp300")
+//@Table(name= "emp500")
 public class Employee {
 
 @Id
@@ -50,7 +49,3 @@ public void setLastName(String lastName) {
 
 
 }
-
-
-
-
