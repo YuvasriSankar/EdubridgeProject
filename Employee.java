@@ -1,51 +1,61 @@
-package com;
-import javax.persistence.Column;
+package emp;
 
+import java.io.Serializable;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-//import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.Table;
 
 @Entity
-//@Table(name= "emp500")
-public class Employee {
+@Table(name = "employeeLoad")
+public class Employee implements Serializable{
 
-@Id
-@GeneratedValue
-@Column(name="emp_id")
-private int id;
-@Column(name="first_Name",length=20,unique=true)
-private String firstName;
-@Column(name="last_Name",nullable=false)
-private String lastName;
-@Transient
-private double salary;
+	@Id
+	@GeneratedValue
+	@Column(name="id")
+	private int id;	
 
-public double getSalary() {
-	return salary;
-}
-public void setSalary(double salary) {
-	this.salary = salary;
-}
-public int getId() {
-	return id;
-}
-public void setId(int id) {
-	this.id = id;
-}
-public String getFirstName() {
-	return firstName;
-}
-public void setFirstName(String firstName) {
-	this.firstName = firstName;
-}
-public String getLastName() {
-	return lastName;
-}
-public void setLastName(String lastName) {
-	this.lastName = lastName;
-}
+	@Column(name="emp_name")
+	private String empName;
 
+	@Column(name="emp_address")
+	private String empAddress;	  
+
+	@Column(name="emp_mobile_nos")
+	private String empMobileNos;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getEmpName() {
+		return empName;
+	}
+
+	public void setEmpName(String empName) {
+		this.empName = empName;
+	}
+
+	public String getEmpAddress() {
+		return empAddress;
+	}
+
+	public void setEmpAddress(String empAddress) {
+		this.empAddress = empAddress;
+	}
+
+	public String getEmpMobileNos() {
+		return empMobileNos;
+	}
+
+	public void setEmpMobileNos(String empMobileNos) {
+		this.empMobileNos = empMobileNos;
+	}
 
 }
