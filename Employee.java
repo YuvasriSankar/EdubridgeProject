@@ -1,61 +1,60 @@
-package emp;
+package com.edubridge.onetoonemapping;
 
-import java.io.Serializable;
-
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.OneToOne;
 
 @Entity
-@Table(name = "employeeLoad")
-public class Employee implements Serializable{
-
+public class Employee {
 	@Id
-	@GeneratedValue
-	@Column(name="id")
-	private int id;	
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	int emp_Id;
+	
+	String name;
+	String email;
+	
+	@OneToOne(targetEntity=Address.class,cascade=CascadeType.ALL)  
+	Address address;
 
-	@Column(name="emp_name")
-	private String empName;
+	
 
-	@Column(name="emp_address")
-	private String empAddress;	  
-
-	@Column(name="emp_mobile_nos")
-	private String empMobileNos;
-
-	public int getId() {
-		return id;
+	public int getEmpId() {
+		return emp_Id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setEmpId(int empId) {
+		this.emp_Id = empId;
 	}
 
-	public String getEmpName() {
-		return empName;
+	public String getName() {
+		return name;
 	}
 
-	public void setEmpName(String empName) {
-		this.empName = empName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getEmpAddress() {
-		return empAddress;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setEmpAddress(String empAddress) {
-		this.empAddress = empAddress;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	public String getEmpMobileNos() {
-		return empMobileNos;
+	public Address getAddress() {
+		return address;
 	}
 
-	public void setEmpMobileNos(String empMobileNos) {
-		this.empMobileNos = empMobileNos;
+	public void setAddress(Address address) {
+		this.address = address;
 	}
+	
+	
+	
+	
 
 }

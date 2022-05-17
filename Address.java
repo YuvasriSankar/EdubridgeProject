@@ -1,42 +1,58 @@
-package com.edubridge.hibernate.valuetype;
+package com.edubridge.onetoonemapping;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
+import javax.persistence.Entity;
 
-@Embeddable
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+@Entity
 public class Address {
-	@Column(name="STREET_NAME")
-    private String street;
-    @Column(name="CITY_NAME")
-    private String city;
-    @Column(name="STATE_NAME")
-    private String state;
-    @Column(name="PIN_CODE")
-    private String pincode;
-	public String getStreet() {
-		return street;
-	}
-	public void setStreet(String street) {
-		this.street = street;
-	}
-	public String getCity() {
-		return city;
-	}
-	public void setCity(String city) {
-		this.city = city;
-	}
-	public String getState() {
-		return state;
-	}
-	public void setState(String state) {
-		this.state = state;
-	}
-	public String getPincode() {
-		return pincode;
-	}
-	public void setPincode(String pincode) {
-		this.pincode = pincode;
-	}
-    
+
+@Id  
+@GeneratedValue(strategy=GenerationType.AUTO)  
+
+int addressId;
+String city;
+String state;
+
+@OneToOne(targetEntity=Employee.class)  
+private Employee employee;//mapping 
+
+
+
+public int getAddressId() {
+	return addressId;
+}
+
+public void setAddressId(int addressId) {
+	this.addressId = addressId;
+}
+
+public String getCity() {
+	return city;
+}
+
+public void setCity(String city) {
+	this.city = city;
+}
+
+public String getState() {
+	return state;
+}
+
+public void setState(String state) {
+	this.state = state;
+}
+
+public Employee getEmployee() {
+	return employee;
+}
+
+public void setEmployee(Employee employee) {
+	this.employee = employee;
+} 
+
 
 }
