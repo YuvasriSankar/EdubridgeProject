@@ -1,15 +1,27 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.edubridge.hibernate.sample</groupId>
-  <artifactId>HibernateMavenProject</artifactId>
+
+  <groupId>com.edubridge.onetoonemapping</groupId>
+  <artifactId>OnetoOneMappingAnnotationExample</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
-<dependencies>
-<dependency>
+  <packaging>jar</packaging>
+
+  <name>OnetoOneMappingAnnotationExample</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+  
+  <dependency>
     <groupId>org.hibernate</groupId>
     <artifactId>hibernate-core</artifactId>
     <version>5.6.5.Final</version>
 </dependency>
+
 <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 <dependency>
     <groupId>mysql</groupId>
@@ -17,5 +29,11 @@
     <version>8.0.28</version>
 </dependency>
 
-</dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
 </project>
