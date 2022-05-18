@@ -1,18 +1,19 @@
 	package com.mypack;    
-	import javax.persistence.*;  
-	import java.util.List;    
-	  
+	    
+	import java.util.List;  
+	import javax.persistence.*;    
+	    
 	@Entity  
-	@Table(name="Question")  
+	@Table(name="ques1123")  
 	public class Question {    
-	  
-	@Id   
-	@GeneratedValue(strategy=GenerationType.TABLE)  
+	    @Id  
+	    @GeneratedValue(strategy=GenerationType.AUTO)  
 	private int id;    
-	private String qname;    
-	@OneToMany(cascade = CascadeType.ALL)  
-	@JoinColumn(name="qid")  
-	@OrderColumn(name="type")  
+	private String qname;   	  
+	@ManyToMany(targetEntity = Answer.class, cascade = { CascadeType.ALL })  
+	@JoinTable(name = "q_ans1123",   
+            joinColumns = { @JoinColumn(name = "q_id") },   
+	            inverseJoinColumns = { @JoinColumn(name = "ans_id") })  
 	private List<Answer> answers;
 	public int getId() {
 		return id;
