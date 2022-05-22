@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>  
+ <?xml version='1.0' encoding='UTF-8'?>  
 <!DOCTYPE hibernate-configuration PUBLIC  
           "-//Hibernate/Hibernate Configuration DTD 3.0//EN"  
           "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">  
@@ -16,10 +16,7 @@
  <property name="connection.password">Yuvasri@31</property>  
  <property name="connection.driver_class">
  com.mysql.cj.jdbc.Driver</property>  
-        <mapping class="com.tableperconcreteclassusingannotation.Employee"/>  
-	        <mapping class="com.tableperconcreteclassusingannotation.Contract_Employee"/>  
-	        <mapping class="com.tableperconcreteclassusingannotation.Regular_Employee"/>  
-
+ <mapping resource="employee.hbm.xml"/>  
     </session-factory>  
     
 </hibernate-configuration>  
