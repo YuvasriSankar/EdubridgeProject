@@ -16,7 +16,10 @@
  <property name="connection.password">Yuvasri@31</property>  
  <property name="connection.driver_class">
  com.mysql.cj.jdbc.Driver</property>  
- <mapping resource="employee.hbm.xml"/>  
+        <mapping class="com.tableperconcreteclassusingannotation.Employee"/>  
+	        <mapping class="com.tableperconcreteclassusingannotation.Contract_Employee"/>  
+	        <mapping class="com.tableperconcreteclassusingannotation.Regular_Employee"/>  
+
     </session-factory>  
     
 </hibernate-configuration>  
