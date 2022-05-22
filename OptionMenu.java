@@ -6,23 +6,22 @@ import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class OptionMenu extends Account {
-	Scanner menuInput = new Scanner(System.in);
+public class OptionMenu extends AccountDetails {
+	Scanner scanner = new Scanner(System.in);
 	DecimalFormat moneyFormat = new DecimalFormat("'$' ###,##0.00");
 	HashMap<Integer,Integer> data = new HashMap<Integer,Integer>();
     public void getLogin() throws IOException{
     	int x=1;
     	do {
     		try {
-    			data.put(948626,198765);
-    			data.put(948954,73396);
-    			
+    			data.put(1234,3199);
+    			data.put(5678,3177);
     			System.out.println("************Welcome to the ATM Project***********");
     			System.out.println("Enter your customer Number:");
-    			setCustomerNumber(menuInput.nextInt());
+    			setCustomerNumber(scanner.nextInt());
     			
     			System.out.println("Enter your PIN Number: ");
-    			setPinNumber(menuInput.nextInt());
+    			setPinNumber( scanner.nextInt());
     			}catch(Exception e) {
     			System.out.println("\n"+"Invalid Character(s).Only Numbers." +"\n");
     			x=2;
@@ -41,7 +40,7 @@ public class OptionMenu extends Account {
     		System.out.println("Type 1 -Checking Account");
     		System.out.println("Type 2- Saving Account");
     		System.out.println("Type 3 - Exit");
-    		int selection = menuInput.nextInt();
+    		int selection = scanner.nextInt();
     		switch(selection) {
     		case 1:
     			  getChecking();
@@ -65,11 +64,11 @@ public class OptionMenu extends Account {
     		System.out.println("Type 4- Exit");
     		System.out.println("Choice: ");
     		
-    		int selection = menuInput.nextInt();
+    		int selection = scanner.nextInt();
     		
     		switch(selection) {
     		    case 1:
-    			  System.out.println("Checking Account Balance:");
+    			  System.out.println("Checking Account Balance:"+ moneyFormat.format(getCheckingBalance()));
     			  getAccountType();
     			  break;
     			case 2:
@@ -95,11 +94,11 @@ public class OptionMenu extends Account {
     		System.out.println("Type 3 - Deposit Funds");	
     		System.out.println("Type 4 - Exit");
     		System.out.println("Choice: ");
-    		int selection = menuInput.nextInt();
+    		int selection =  scanner.nextInt();
     		
     		switch(selection) {
     		    case 1:
-    			  System.out.println("Saving Account Balance:" );
+    			  System.out.println("Saving Account Balance:"+ moneyFormat.format(getSavingBalance())); 
     			  getAccountType();
     			  break;
     			case 2:
