@@ -1,0 +1,27 @@
+    <!DOCTYPE hibernate-mapping PUBLIC  
+	          "-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
+	          "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">  
+	  
+	  
+	 < hibernate-mapping>   
+	  <class name="com.tableperconcreteclass.Employee" table="emp122">  
+	  <id name="id">  
+	  <generator class="increment"></generator>  
+	  </id>  
+	           
+	  <property name="name"></property>  
+	            
+	  <union-subclass name="com.tableperconcreteclass.Regular_Employee" table="regemp122">  
+	  <property name="salary"></property>  
+	  <property name="bonus"></property>  
+	  </union-subclass>  
+	            
+	  <union-subclass name="com.tableperconcreteclass.Contract_Employee" table="contemp122">  
+	  <property name="pay_per_hour"></property>  
+	  <property name="contract_duration"></property>  
+	  </union-subclass>  
+	            
+	  </class>  
+	            
+	  </ibernate-mapping>  
+
