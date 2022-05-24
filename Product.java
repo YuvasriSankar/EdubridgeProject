@@ -1,34 +1,36 @@
-package model;
+package retrievedatafromproduct;
 
 public class Product {
+	private int pid;
+	private String pname;
+	private double pprice;
+	Product()
+	{
 	
-	String p_id;
-	String p_name;
-	String p_price;
-	
-	public String getP_id() {
-		return p_id;
 	}
-	public void setP_id(String p_id) {
-		this.p_id = p_id;
+	public Product(int pid, String pname, double pprice) {
+		super();
+		this.pid = pid;
+		this.pname = pname;
+		this.pprice = pprice;
 	}
-	public String getP_name() {
-		return p_name;
+	public int getPid() {
+		return pid;
 	}
-	public void setP_name(String p_name) {
-		this.p_name = p_name;
+	public void setPid(int pid) {
+		this.pid = pid;
 	}
-	public String getP_price() {
-		return p_price;
+	public String getPname() {
+		return pname;
 	}
-	public void setP_price(String p_price) {
-		this.p_price = p_price;
+	public void setPname(String pname) {
+		this.pname = pname;
 	}
-	@Override
-	public String toString() {
-		return "Product [p_id=" + p_id + ", p_name=" + p_name + ", p_price=" + p_price + "]";
+	public double getPprice() {
+		return pprice;
 	}
-
-	
+	public void setPprice(double pprice) {
+		this.pprice = pprice;
+	}
 	
 }
