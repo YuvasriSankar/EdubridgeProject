@@ -1,29 +1,22 @@
-<?xml version='1.0' encoding='UTF-8'?>  
-	<!DOCTYPE hibernate-mapping PUBLIC  
-	  
-	  "-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
-	  "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">  
-	  
-	  
-	  <hibernate--mapping>  
-	  <class name="com.tablepersubclassusingannotation.Employee" table="emp123">  
-	  <id name="id">  
-	  <generator class="increment"></generator>  
-	  </id>  
-	  
-	  <property name="name"></property>  
-	  
-	  <joined-subclass name="com.tablepersubclassusingannotation.Regular_Employee" table="regemp123">  
-	  <key column="eid"></key>  
-	  <property name="salary"></property>  
-	  <property name="bonus"></property>  
-	  </joined-subclass>  
-	   
-	  <joined-subclass name="com.tablepersubclassusingannotation.Contract_Employee" table="contemp123">  
-	  <key column="eid"></key>  
-	  <property name="pay_per_hour"></property>  
-	  <property name="contract_duration"></property>  
-	  </joined-subclass>  
-	  
-	  </class>  
-	  </hibernate-mapping>  
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+< hibernate-mapping>
+   <class name = "criteriaqueries.Employee" table ="EMPLOYEEQ">
+      
+      <meta attribute = "class-description">
+         This class contains the employee detail. 
+      </meta>
+      
+      <id name = "id" type = "int" column = "id">
+         <generator class="native"/>
+      </id>
+      
+      <property name = "firstName" column = "first_name" type = "string"/>
+      <property name = "lastName" column = "last_name" type = "string"/>
+      <property name = "salary" column = "salary" type = "int"/>
+      
+   </class>
+</hibernate-mapping>
