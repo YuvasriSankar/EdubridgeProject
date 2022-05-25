@@ -1,12 +1,10 @@
-package jpa;
+package com.edu.jpa;
 
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
-@Table(name="alien")
 public class Alien {
 	@Id
 	private int aid;

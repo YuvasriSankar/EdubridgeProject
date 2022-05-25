@@ -1,4 +1,4 @@
-package jpa;
+package com.edu.jpa;
 
 	import javax.persistence.EntityManager;
 	import javax.persistence.EntityManagerFactory;
@@ -18,15 +18,15 @@ package jpa;
 	        alien1.setAname("Dinesh");
 	        alien1.setTech(".net technology");
 	        
-	        EntityManagerFactory emf=Persistence.createEntityManagerFactory("alien_table");
+	        EntityManagerFactory emf=Persistence.createEntityManagerFactory("Test");
 	        EntityManager manager=emf.createEntityManager();
 	        
 	        manager.getTransaction().begin();
 	        manager.persist(alien1);
 	        manager.getTransaction().commit();
 	        
-	        //Alien alien=manager.find(Alien.class, 800);
-	        //System.out.println(alien);
+	        Alien alien=manager.find(Alien.class, 800);
+	        System.out.println(alien);
 	        
 	    }
 	}
