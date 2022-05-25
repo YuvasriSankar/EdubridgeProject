@@ -1,48 +1,49 @@
-package com.edu.listcollection;
-import javax.persistence.Cacheable;
+package jpa;
+
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
-
 @Entity
-@Table(name="alien_table")
-@Cacheable
-@Cache(usage=CacheConcurrencyStrategy.READ_ONLY)
-
-public class Alien 
-{
+@Table(name="alien")
+public class Alien {
 	@Id
 	private int aid;
+	private String aname;
+	private String tech;
+	/*
 	
-	private AlienName aname;
-	private String color;
+	create table Alien(aid int primary key, aname varchar(30), tech varchar(30))
 	
+	 */
 	public int getAid() {
 		return aid;
 	}
 	public void setAid(int aid) {
 		this.aid = aid;
 	}
-	
-	public AlienName getAname() {
+	public String getAname() {
 		return aname;
 	}
-	public void setAname(AlienName aname) {
+	public void setAname(String aname) {
 		this.aname = aname;
 	}
-	public String getColor() {
-		return color;
+	public String getTech() {
+		return tech;
 	}
-	public void setColor(String color) {
-		this.color = color;
+	public void setTech(String tech) {
+		this.tech = tech;
 	}
+	
 	@Override
 	public String toString() {
-		return "Alien [aid=" + aid + ", aname=" + aname + ", color=" + color + "]";
+		return "Alien [aid=" + aid + ", aname=" + aname + ", tech=" + tech + "]";
 	}
-
+	
+	
 
 }
+
+
+
