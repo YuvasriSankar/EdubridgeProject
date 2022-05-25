@@ -1,49 +1,53 @@
-package criteriaqueries;
+package springfirstexample;
+
 
 	public class Employee {
-		   private int id;
-		   private String firstName; 
-		   private String lastName;   
-		   private int salary;  
 
-		   public Employee() {}
-		   
-		   public Employee(String fname, String lname, int salary) {
-		      this.firstName = fname;
-		      this.lastName = lname;
-		      this.salary = salary;
-		   }
-
-		public int getId() {
-			return id;
+		private int empId;
+		private String empName;
+		private int salary;
+		private Address address;
+		public Employee() {
+			
 		}
-
-		public void setId(int id) {
-			this.id = id;
+		public Employee(int empId, String empName, int salary,Address address) {
+		super();
+			this.empId = empId;
+			this.empName = empName;
+			this.salary = salary;
+			this.address=address;
 		}
-
-		public String getFirstName() {
-			return firstName;
+		public Address getAddress() {
+			return address;
 		}
-
-		public void setFirstName(String firstName) {
-			this.firstName = firstName;
+		public void setAddress(Address address) {
+			this.address = address;
 		}
-
-		public String getLastName() {
-			return lastName;
+		public int getEmpId() {
+			return empId;
 		}
-
-		public void setLastName(String lastName) {
-			this.lastName = lastName;
+		public void setEmpId(int empId) {
+			this.empId = empId;
 		}
-
+		public String getEmpName() {
+			return empName;
+		}
+		public void setEmpName(String empName) {
+			this.empName = empName;
+		}
 		public int getSalary() {
 			return salary;
 		}
-
 		public void setSalary(int salary) {
 			this.salary = salary;
 		}
-		   
-}
+		@Override
+		public String toString() {
+			return "Employee [empId=" + empId + ", empName=" + empName + ", salary=" + salary + ", address=" + address
+					+ "]";
+		}
+		
+		
+	}
+
+
