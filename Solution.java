@@ -18,4 +18,4 @@ public class Solution {
 		   }
 		   bufferedreader.close();
 }
-}
+}//enter the input from console=2.
